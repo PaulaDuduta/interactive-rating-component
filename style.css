@@ -64,7 +64,25 @@ body {
   height: 400px;
 }
 
-.pageContent .ratings li {
+.pageContent .ratings input {
+  /* display: none; */
+}
+
+.ratings label > input:checked {
+  background-color: hsl(218, 12%, 82%);
+  color: PINK;
+  opacity: 1;
+}
+
+.pageContent .ratings span:hover {
+  background-color: hsl(25, 97%, 53%);
+  color: #fff;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.pageContent .ratings label span {
+  cursor: pointer;
   background-color: hsl(214, 10%, 33%);
   border-radius: 50%;
   width: 40px;
@@ -73,13 +91,6 @@ body {
   align-items: center;
   justify-content: center;
   opacity: 0.5;
-}
-
-.pageContent .ratings li:hover {
-  background-color: hsl(25, 97%, 53%);
-  color: #fff;
-  cursor: pointer;
-  opacity: 1;
 }
 
 .submitBtn {
