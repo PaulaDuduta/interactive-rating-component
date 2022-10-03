@@ -24,8 +24,8 @@
 </head>
 
 <body>
-  <main class="pageWrapper p-4 mt-0 position-absolute rounded-5">
-    <div class="beforeSubmit">
+  <main class="pageWrapper p-4 m-0 position-absolute rounded-5">
+    <div class="beforeSubmit d-flex flex-column justify-content-center">
       <div class="starIcon rounded-circle d-inline-flex align-items-center justify-content-center">
         <svg
           width="17"
@@ -99,7 +99,7 @@
 
       <button
         type="submit"
-        class="submitBtn rounded-pill border-0 text-uppercase fw-semibold"
+        class="submitBtn rounded-pill border-0 text-uppercase fw-semibold align-self-center mt-3"
       >Submit</button>
     </div>
 
@@ -200,7 +200,9 @@
         </svg>
       </div>
 
-      <div class="selectedRating"></div>
+      <div class="mb-2">
+        <p class="selectedRating rounded-pill py-1 px-3 m-0"></p>
+      </div>
 
       <div class="submitMessage text-center">
         <h1 class="text-white fw-semibold">Thank you!</h1>

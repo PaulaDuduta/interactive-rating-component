@@ -28,7 +28,8 @@ ul {
 
 ol,
 li,
-ul {
+ul,
+p {
   margin: 0;
   padding: 0;
 }
@@ -59,19 +60,20 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: hsl(213, 19%, 18%);
-  width: 350px;
-  height: 400px;
+  background-color: hsl(208, 18%, 14%);
+  width: 340px;
+  height: 390px;
+}
+
+@media (min-width: 550px) {
+  .pageWrapper {
+    width: 390px;
+    height: 390px;
+  }
 }
 
 .pageContent .ratings input {
-  /* display: none; */
-}
-
-.ratings label > input:checked {
-  background-color: hsl(218, 12%, 82%);
-  color: PINK;
-  opacity: 1;
+  display: none;
 }
 
 .pageContent .ratings span:hover {
@@ -95,13 +97,30 @@ body {
 
 .submitBtn {
   width: 300px;
-  height: 50px;
+  height: 40px;
   background-color: hsl(25, 97%, 53%);
   letter-spacing: 4px;
   color: #fff;
 }
 
+@media (min-width: 550px) {
+  .submitBtn {
+    width: 350px;
+  }
+}
+
 .submitBtn:hover {
   background-color: #fff;
   color: hsl(25, 97%, 53%);
+}
+
+.selected {
+  color: #fff !important;
+  background-color: hsl(217, 12%, 63%) !important;
+  opacity: 1 !important;
+}
+
+.selectedRating {
+  color: hsl(25, 97%, 53%);
+  background-color: hsl(210, 11%, 24%);
 }

@@ -1,39 +1,48 @@
-// const ratingNumber = document.querySelectorAll('.ratings label span');
-// const submitBtn = document.querySelector('.submitBtn');
-// let ratingValue = document.querySelector('.ratings .selected');
-// let selected = document.querySelector('input[attribute="checked"]');
-// let data;
+const ratingNumber = document.querySelectorAll('.ratings label span');
+const submitBtn = document.querySelector('.submitBtn');
+let ratingValue = document.querySelector('.ratings .selected');
+let selectedRating = document.querySelector('.selectedRating');
 
-// for (let i = 0; i < ratingNumber.length; i++) {
-//   ratingNumber[i].addEventListener(
-//     'click',
-//     function () {
-//       let elementSelect = document.querySelector('.selected');
+for (let i = 0; i < ratingNumber.length; i++) {
+  ratingNumber[i].addEventListener(
+    'click',
+    function () {
+      let elementSelect = document.querySelector('.selected');
 
-//       if (elementSelect && elementSelect !== this) {
-//         elementSelect.classList.remove('selected');
-//       }
+      if (elementSelect && elementSelect !== ratingNumber[i]) {
+        elementSelect.classList.remove('selected');
+      }
 
-//       this.classList.toggle('selected');
+      ratingNumber[i].classList.add('selected');
 
-//       selected.setAttribute('attribute', 'checked');
+      submitBtn.addEventListener('click', submitMsg);
+    },
+    false,
+  );
+}
 
-//       submitBtn.addEventListener('click', submitMsg);
-//     },
-//     false,
-//   );
-// }
+const submitMsg = function () {
+  const beforeSubmit = document.querySelector('.beforeSubmit');
+  const afterSubmit = document.querySelector('.afterSubmit');
 
-// const submitMsg = function () {
-//   const beforeSubmit = document.querySelector('.beforeSubmit');
-//   const afterSubmit = document.querySelector('.afterSubmit');
+  beforeSubmit.classList.add('d-none');
+  afterSubmit.classList.remove('d-none');
 
-//   beforeSubmit.style.display = 'none';
-//   afterSubmit.classList.remove('d-none');
-// };
+  ratingScore();
+};
 
-// if (selected) {
-//   data = document.querySelector('input[attribute = "checked"]').value;
-// }
+const ratingScore = function () {
+  let score = document.querySelectorAll('.ratings span');
+  let scoreValue;
 
-// console.log(data);
+  for (let i = 0; i < score.length; i++) {
+    scoreValue = score[i].textContent;
+
+    if (i <= score.length) {
+      let inputValue = document.querySelector('.ratings span.selected');
+      selectedRating.innerText = `You selected ${
+        inputValue.textContent
+      } out of ${i + 1}`;
+    }
+  }
+};
